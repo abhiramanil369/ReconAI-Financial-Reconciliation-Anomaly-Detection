@@ -1,4 +1,4 @@
-from fault_injection import(
+from benchmark_generation.fault_injection import(
     inject_amount_mismatch,
     inject_date_mismatch,
     inject_missing_document,
@@ -7,7 +7,7 @@ from fault_injection import(
     inject_broken_references
 )
 
-from ground_truth import create_ground_truth
+from benchmark_generation.ground_truth import create_ground_truth
 
 from syndata_generation.generators import(
     generate_invoice,

@@ -1,4 +1,4 @@
-from models import(
+from syndata_generation.models import(
     Transaction,
     Invoice,
     Payment,
