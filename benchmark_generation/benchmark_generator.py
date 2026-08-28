@@ -54,7 +54,7 @@ def create_benchmark_case(
     """
 
     
-    documents = create_benchmark_case(transaction)
+    documents = create_clean_case(transaction)
 
     if fault_type == "clean":
         ground_truth = create_ground_truth(case_id, "clean")
@@ -112,9 +112,9 @@ def generate_benchmark_dataset(
             ground_truth
         )
 
-        return (
-            benchmark_cases,
-            ground_truth_labels
-        )
+    return (
+        benchmark_cases,
+        ground_truth_labels
+    )
 
 

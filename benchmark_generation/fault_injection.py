@@ -34,7 +34,7 @@ def inject_date_mismatch(documents):
         .transaction_date
     )
 
-    faulty_documents["payments"].payment_date = (
+    faulty_documents["payment"].payment_date = (
         original_date + timedelta(days=1)
     )
 
@@ -65,7 +65,7 @@ def inject_missing_document(documents):
 
     faulty_documents = deepcopy(documents)
 
-    faulty_documents["payments"] = None
+    faulty_documents["payment"] = None
 
     return faulty_documents
 

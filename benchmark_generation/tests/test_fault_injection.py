@@ -24,7 +24,7 @@ def test_date_mismatch(clean_documents):
     )
 
     assert (
-        faulty_documents["payments"].payments_date
+        faulty_documents["payment"].payment_date
         != 
         faulty_documents["transaction"].transaction_date
     )
@@ -41,7 +41,7 @@ def test_duplicate_document(clean_documents):
     )
 
     assert (
-        faulty_documents["duplicates_invoices"].invoice_id
+        faulty_documents["duplicate_invoice"].invoice_id
         == 
         faulty_documents["invoice"].invoice_id
     )
@@ -54,11 +54,7 @@ def test_missing_document(clean_documents):
         clean_documents
     )
 
-    assert (
-        faulty_documents["invoice"].customer_id
-        !=
-        faulty_documents["transaction"].customer_id
-    )
+    assert faulty_documents["payment"] is None
 
 def test_broken_reference(clean_documents):
 

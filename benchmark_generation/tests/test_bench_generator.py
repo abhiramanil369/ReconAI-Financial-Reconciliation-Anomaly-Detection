@@ -29,19 +29,19 @@ def test_create_clean(sample_transaction):
     )
 
     assert (
-        documents["payments"].invoice_id
+        documents["payment"].invoice_id
         == 
         documents["invoice"].invoice_id
     )
 
     assert (
-        documents["payments"].transaction_id
+        documents["payment"].transaction_id
         ==
         documents["transaction"].transaction_id
     )
 
     assert (
-        documents["payments"].amount
+        documents["payment"].amount
         ==
         documents["transaction"].transaction_amount
     )
