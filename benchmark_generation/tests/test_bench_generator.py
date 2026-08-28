@@ -68,3 +68,68 @@ def test_clean_benchmark_case(
             fault_type="clean"
         )
     )
+
+    assert (
+        ground_truth["label"] == "MATCH"
+    )
+
+    assert (
+        ground_truth["is_clean"] is True
+    )
+
+    assert (
+        ground_truth["fault_type"] is None
+    )
+
+
+def test_amount_mismatch_case(
+        sample_transaction
+):
+    documents, ground_truth = (
+        create_benchmark_case(
+            transaction = sample_transaction,
+            case_id = "CASE-002",
+            fault_type="amount_mismatch"
+        )
+    )
+
+    assert (
+        documents["invoice"].amount 
+        != 
+        documents["transaction"].transaction_amount
+    )
+
+    assert (
+        ground_truth["label"] == "AMOUNT_MISMATCH"
+    )
+
+def test_generate_benchmark_dataset(
+        sample_transaction
+):
+    transactions = [
+        sample_transaction,
+        sample_transaction
+    ]
+    fault_types = [
+        "clean",
+        "amount_mismatch"
+    ]
+
+    cases, labels = (
+        generate_benchmark_dataset(
+            transactions,
+            fault_types
+        )
+    )
+
+    assert len(cases) == 2
+
+    assert len(labels) == 2
+
+    assert (
+        labels[0]["label"] == "MATCH"
+    )
+
+    assert (
+        labels[1]["label"] == "AMOUNT_MISMATCH"
+    )
