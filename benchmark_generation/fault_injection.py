@@ -83,7 +83,7 @@ def inject_wrong_customer(documents):
     )
 
     faulty_documents["invoice"].customer_id  = (
-        f"WRONG-{original_customer}"
+        f"WRONG{original_customer}"
     )
 
     return faulty_documents

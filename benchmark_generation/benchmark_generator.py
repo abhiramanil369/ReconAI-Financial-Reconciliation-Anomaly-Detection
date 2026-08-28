@@ -88,7 +88,7 @@ def generate_benchmark_dataset(
         transactions
     ):
         case_id = (
-            f"CASE-{index + 1:04d}"
+            f"CASE{index + 1:04d}"
         )
 
         fault_type = fault_types[
