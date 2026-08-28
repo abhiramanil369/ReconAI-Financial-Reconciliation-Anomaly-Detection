@@ -66,4 +66,14 @@ def test_broken_reference(clean_documents):
         faulty_documents["transaction"].transaction_id
     )
 
-    
+def test_wrong_customer(clean_documents):
+
+    faulty_documents = inject_wrong_customer(
+        clean_documents
+    )
+
+    assert (
+        faulty_documents["invoice"].customer_id
+        !=
+        faulty_documents["transaction"].customer_id
+    )
