@@ -43,3 +43,78 @@ def create_clean_case(transaction):
         "payment" : payment,
         "bank_transaction" : bank_transaction
     }
+
+def create_benchmark_case(
+        transaction, 
+        case_id,
+        fault_type ="clean"
+):
+    """
+        Create either a clean case or case containining an injected contradiction.
+    """
+
+    
+    documents = create_benchmark_case(transaction)
+
+    if fault_type == "clean":
+        ground_truth = create_ground_truth(case_id, "clean")
+
+        return documents, ground_truth
+
+    injector = FAULT_INJECTIONS[fault_type]
+
+    faulty_documents = injector(documents)
+
+    ground_truth = create_ground_truth(case_id, fault_type)
+
+    return faulty_documents, ground_truth
+
+
+def generate_benchmark_dataset(
+        transactions,
+        fault_types
+):
+    """
+        Generate benchmark cases from multiple transactions.
+        Fault types are assigned cyclically.
+    """
+
+    benchmark_cases = []
+
+    ground_truth_labels = []
+
+
+    for index, transaction in enumerate(
+        transactions
+    ):
+        case_id = (
+            f"CASE-{index + 1:04d}"
+        )
+
+        fault_type = fault_types[
+            index % len(fault_types)
+        ]
+
+        documents, ground_truth = (
+            create_benchmark_case(
+                transaction = transaction,
+                case_id = case_id,
+                fault_type = fault_type
+            )
+        )
+
+        benchmark_cases.append({
+            "case_id" : case_id,
+            "documents" : documents
+        })
+
+        ground_truth_labels.append(
+            ground_truth
+        )
+
+        return (
+            benchmark_cases,
+            ground_truth_labels
+        )
+
+
