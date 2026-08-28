@@ -16,7 +16,7 @@ transactions = [
         investment_amount=10000,
         investment_type="Mutual Fund",
         transaction_date=date(2026,8,28)
-    )
+    ),
 
     Transaction(
         transaction_id = "TXN002",
@@ -27,7 +27,7 @@ transactions = [
         investment_amount=20000,
         investment_type="Stock",
         transaction_date=date(2026,8,27)
-    )
+    ),
 
     Transaction(
         transaction_id = "TXN003",
