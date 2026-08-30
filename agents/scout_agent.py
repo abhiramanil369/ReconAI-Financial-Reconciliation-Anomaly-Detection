@@ -38,13 +38,13 @@ class ScoutAgent:
         if isinstance(document, Transaction):
             return "TRANSACTION"
         
-        if isinstance(document, Transaction):
+        if isinstance(document, Invoice):
             return "INVOICE"
 
-        if isinstance(document, Transaction):
+        if isinstance(document, Payment):
             return "PAYMENT"
 
-        if isinstance(document, Transaction):
+        if isinstance(document, BankTransaction):
             return "BANK_TRANSACTION"
 
 
@@ -85,7 +85,7 @@ class ScoutAgent:
             evidence["document_id"] = document.invoice_id
             evidence["transaction_id"] = document.transaction_id
             evidence["customer_id"] = document.customer_id
-            evidence["amount"] = document.transaction_amount
+            evidence["amount"] = document.amount
             evidence["date"] = document.invoice_date   
 
 
@@ -93,7 +93,7 @@ class ScoutAgent:
             evidence["document_id"] = document.payment_id
             evidence["transaction_id"] = document.transaction_id
             evidence["customer_id"] = document.customer_id
-            evidence["amount"] = document.transaction_amount
+            evidence["amount"] = document.amount
             evidence["date"] = document.payment_date    
 
             evidence["reference_id"] = document.invoice_id
@@ -102,7 +102,7 @@ class ScoutAgent:
             evidence["document_id"] = document.bank_transaction_id
             evidence["transaction_id"] = document.transaction_id
             evidence["customer_id"] = document.customer_id
-            evidence["amount"] = document.transaction_amount
+            evidence["amount"] = document.amount
             evidence["date"] = document.transaction_date 
 
         return evidence
