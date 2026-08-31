@@ -35,9 +35,9 @@ class ReconciliationAgent:
             transaction_id = document["transaction_id"]
 
             if transaction_id not in grouped_documents:
-                grouped_documents["transaction_id"] = []
+                grouped_documents[transaction_id] = []
 
-            grouped_documents["transaction_id"].append(
+            grouped_documents[transaction_id].append(
                 document
             )
 
@@ -52,10 +52,10 @@ class ReconciliationAgent:
             for document in documents
         }
 
-        missing_documents = {
-            self.REQUIRED_DOCUMENT_types
+        missing_documents = (
+            self.REQUIRED_DOCUMENT_TYPES
             - present_document_types
-        }
+        )
 
         return list(missing_documents)
 
@@ -84,7 +84,7 @@ class ReconciliationAgent:
         """
 
         dates = {
-            document["dates"]
+            document["date"]
             for document in documents
         }
 
@@ -182,16 +182,16 @@ class ReconciliationAgent:
             evidence
         )
 
-        reconciliaton_results = []
+        reconciliation_results = []
 
-        for transaction_id, documents in grouped_documents.item():
+        for transaction_id, documents in grouped_documents.items():
 
             result = self.reconcile_transaction(
                 transaction_id,
                 documents
             )
 
-            reconciliaton_results.append(result)
+            reconciliation_results.append(result)
 
 
-        return reconciliaton_results
+        return reconciliation_results
