@@ -44,7 +44,7 @@ class MultiAgentOrchestrator:
         recon_result = recon_results[0] if recon_results else {"status" : 
                                                                "UNKNOWN", "documents": []}
 
-        recon_status = recon_results.get("status", "UNKNOWN")
+        recon_status = recon_result.get("status", "UNKNOWN")
 
         # Branching : clean Case (Match)
         if recon_status == "MATCH":
@@ -94,8 +94,8 @@ class MultiAgentOrchestrator:
         proposal = self.resolution_agent.resolve(
             transaction_id=tx_id,
             financial_documents={"evidence": evidence},
-            reconciliation_result= recon_result,
-            anomaly_result=anomaly
+            reconciliation_results= recon_result,
+            anomaly_results=anomaly
         )
 
 
