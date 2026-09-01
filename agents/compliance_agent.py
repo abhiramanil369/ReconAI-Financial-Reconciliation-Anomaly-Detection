@@ -61,14 +61,14 @@ class ComplianceAgent:
         # Rule 1 : High risk anomaly safety Downgrade
         if anomaly_result:
             anomaly_type = anomaly_result.get("anomaly_type","")
-            if anomaly_type in ["CUSTOMER_MISMATCH", "CUSTOMER_MISMATCH","BROKEN_REFERENCE"]:
+            if anomaly_type in ["CUSTOMER_MISMATCH", "WRONG_CUSTOMER", "BROKEN_REFERENCE"]:
                 if original_action != "ESCALATE":
                     return ComplianceVerdict(
                         transaction_id=transaction_id,
                         approved_action="ESCALATE",
                         is_compliant=False,
                         override_reason=f"High risk anomaly detected: {anomaly_type}. Escalating.",
-                        original_proposed_action=original_action,
+                        original_resolution_action=original_action,
                         confidence=proposal.confidence,
                         journal_entries=None
                     )
@@ -82,7 +82,7 @@ class ComplianceAgent:
                     approved_action="ESCALATE",
                     is_compliant=False,
                     override_reason=f"Confidence below threshold ({proposal.confidence:.2f} below threshold {self.CONFIDENCE_THRESHOLD}).",
-                    original_proposed_action=original_action,
+                    original_resolution_action=original_action,
                     confidence=proposal.confidence,
                     journal_entries=None
                 )           
@@ -97,7 +97,7 @@ class ComplianceAgent:
                     approved_action = "ESCALATE",
                     is_compliant = False,
                     override_reason = "Accounting Violation: CREATE_JOURNAL_ENTRY proposed without journal entries.",
-                    original_proposed_action = original_action,
+                    original_resolution_action = original_action,
                     confidence = proposal.confidence,
                     journal_entries = None
                 )
@@ -111,7 +111,7 @@ class ComplianceAgent:
                     approved_action = "ESCALATE",
                     is_compliant = False,
                     override_reason = f"Accounting Violation: Unbalanced debits and credits. Total Debit: {total_debit}, Total Credit: {total_credit}.",
-                    original_proposed_action = original_action,
+                    original_resolution_action = original_action,
                     confidence = proposal.confidence,
                     journal_entries = None
                 )
@@ -130,14 +130,14 @@ class ComplianceAgent:
                         approved_action = "ESCALATE",
                         is_compliant = False,
                         override_reason = f"Chart of Accounts Violation: Account '{entry.account}' in journal entries is not allowed.",
-                        original_proposed_action = original_action,
+                        original_resolution_action = original_action,
                         confidence = proposal.confidence,
                         journal_entries = None
                     )
 
         # If all checks pass, return the original proposal as compliant
         serialized_entries = (
-            [e.model.dump() for e in proposal.journal_entries]
+            [e.model_dump() for e in proposal.journal_entries]
             if proposal.journal_entries else None
         )
 

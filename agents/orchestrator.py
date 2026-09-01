@@ -102,7 +102,7 @@ class MultiAgentOrchestrator:
         self.audit_logger.log_entry(
             case_id=case_id,
             transaction_id=tx_id,
-            step_name="RESOLUTIO_PROPOSAL",
+            step_name="RESOLUTION_PROPOSAL",
             agent_name="ResolutionAgent (LLM)",
             decision = proposal.action,
             reason=proposal.reason,
@@ -139,7 +139,7 @@ class MultiAgentOrchestrator:
 
 
 
-    def save_audit_logs(self):
+    def save_audit_log(self):
         self.audit_logger.save()
 
         

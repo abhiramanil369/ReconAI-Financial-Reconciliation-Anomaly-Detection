@@ -80,7 +80,7 @@ class AnomalyAgent:
         if status == "MISSING_DOCUMENT":
 
             missing_documents = (
-                reconciliation_result["missing_document"]
+                reconciliation_result["missing_documents"]
             )
 
             return (

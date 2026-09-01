@@ -61,7 +61,7 @@ class ResolutionAgent:
     Uses Qwen2.5: 7B-Instruct through Ollama to propose a grounded financial resolution based on the provided evidence documents.
     """
 
-    MODEL = "qwen-2.5-7b-instruct"
+    MODEL = "qwen2.5:7b-instruct"
 
     def resolve(
             self, 
@@ -71,10 +71,10 @@ class ResolutionAgent:
             anomaly_results : dict[str, Any]
     ) -> Resolution:
 
-        system_prompt = """ You are a senior AI Finanace Controller specializing 
+        system_prompt = """ You are a senior AI Finance Controller specializing 
 
         in multi-source financial reconciliation, exception resolution, and
-        doublt-entry bookkeeping.
+        double-entry bookkeeping.
 
         YOUR MISSION:
         Analyze financial reconciliation anomalies and propose ONE
@@ -84,7 +84,7 @@ class ResolutionAgent:
 
         1. AUTO_RECONCILE : Use ONLY when available evidence supports complete reconciliation.
 
-        2. WAIT_FOR_SETTLEMET : Use when payment exists but bank settlement evidence is pending (date difference within acceptable clearing window).
+        2. WAIT_FOR_SETTLEMENT : Use when payment exists but bank settlement evidence is pending (date difference within acceptable clearing window).
 
         3. REQUEST_MISSING_DOCUMENT : Use when a required financial document (Invoice, Payment, Bank Transaction) is missing.
 
@@ -108,10 +108,10 @@ class ResolutionAgent:
 
 """
 
-        user_prompt = """
+        user_prompt = f"""
         TRANSACTION ID: {transaction_id}
         
-        FINANCIAL EVIDENCE: {json.dumps(financial_evidence, indent= 2, default = str)}
+        FINANCIAL EVIDENCE: {json.dumps(financial_documents, indent= 2, default = str)}
 
         RECONCILIATION RESULTS: {json.dumps(reconciliation_results, indent= 2, default = str)}
 
