@@ -1,0 +1,242 @@
+[
+    {
+        "case_id": "CASE-0005",
+        "transaction_id": "300004",
+        "fault_type": "missing_document",
+        "predicted_status": "MISSING_DOCUMENT",
+        "final_action": "REQUEST_MISSING_DOCUMENT",
+        "reason": "Required documents(s) missing:PAYMENT"
+    },
+    {
+        "case_id": "CASE-0006",
+        "transaction_id": "300005",
+        "fault_type": "wrong_customer",
+        "predicted_status": "CUSTOMER_MISMATCH",
+        "final_action": "ESCALATE",
+        "reason": "Customer IDs differ between relatedfinancial documents."
+    },
+    {
+        "case_id": "CASE-0007",
+        "transaction_id": "300006",
+        "fault_type": "broken_reference",
+        "predicted_status": "MISSING_DOCUMENT",
+        "final_action": "REQUEST_MISSING_DOCUMENT",
+        "reason": "Required documents(s) missing:INVOICE"
+    },
+    {
+        "case_id": "CASE-0012",
+        "transaction_id": "300011",
+        "fault_type": "missing_document",
+        "predicted_status": "MISSING_DOCUMENT",
+        "final_action": "REQUEST_MISSING_DOCUMENT",
+        "reason": "Required documents(s) missing:PAYMENT"
+    },
+    {
+        "case_id": "CASE-0013",
+        "transaction_id": "300012",
+        "fault_type": "wrong_customer",
+        "predicted_status": "CUSTOMER_MISMATCH",
+        "final_action": "ESCALATE",
+        "reason": "Customer IDs differ between relatedfinancial documents."
+    },
+    {
+        "case_id": "CASE-0014",
+        "transaction_id": "300013",
+        "fault_type": "broken_reference",
+        "predicted_status": "MISSING_DOCUMENT",
+        "final_action": "REQUEST_MISSING_DOCUMENT",
+        "reason": "Required documents(s) missing:INVOICE"
+    },
+    {
+        "case_id": "CASE-0019",
+        "transaction_id": "300018",
+        "fault_type": "missing_document",
+        "predicted_status": "MISSING_DOCUMENT",
+        "final_action": "REQUEST_MISSING_DOCUMENT",
+        "reason": "Required documents(s) missing:PAYMENT"
+    },
+    {
+        "case_id": "CASE-0020",
+        "transaction_id": "300019",
+        "fault_type": "wrong_customer",
+        "predicted_status": "CUSTOMER_MISMATCH",
+        "final_action": "ESCALATE",
+        "reason": "Customer IDs differ between relatedfinancial documents."
+    },
+    {
+        "case_id": "CASE-0021",
+        "transaction_id": "300020",
+        "fault_type": "broken_reference",
+        "predicted_status": "MISSING_DOCUMENT",
+        "final_action": "REQUEST_MISSING_DOCUMENT",
+        "reason": "Required documents(s) missing:INVOICE"
+    },
+    {
+        "case_id": "CASE-0026",
+        "transaction_id": "300025",
+        "fault_type": "missing_document",
+        "predicted_status": "MISSING_DOCUMENT",
+        "final_action": "REQUEST_MISSING_DOCUMENT",
+        "reason": "Required documents(s) missing:PAYMENT"
+    },
+    {
+        "case_id": "CASE-0027",
+        "transaction_id": "300026",
+        "fault_type": "wrong_customer",
+        "predicted_status": "CUSTOMER_MISMATCH",
+        "final_action": "ESCALATE",
+        "reason": "Customer IDs differ between relatedfinancial documents."
+    },
+    {
+        "case_id": "CASE-0028",
+        "transaction_id": "300027",
+        "fault_type": "broken_reference",
+        "predicted_status": "MISSING_DOCUMENT",
+        "final_action": "REQUEST_MISSING_DOCUMENT",
+        "reason": "Required documents(s) missing:INVOICE"
+    },
+    {
+        "case_id": "CASE-0033",
+        "transaction_id": "300032",
+        "fault_type": "missing_document",
+        "predicted_status": "MISSING_DOCUMENT",
+        "final_action": "REQUEST_MISSING_DOCUMENT",
+        "reason": "Required documents(s) missing:PAYMENT"
+    },
+    {
+        "case_id": "CASE-0034",
+        "transaction_id": "300033",
+        "fault_type": "wrong_customer",
+        "predicted_status": "CUSTOMER_MISMATCH",
+        "final_action": "ESCALATE",
+        "reason": "Customer IDs differ between relatedfinancial documents."
+    },
+    {
+        "case_id": "CASE-0035",
+        "transaction_id": "300034",
+        "fault_type": "broken_reference",
+        "predicted_status": "MISSING_DOCUMENT",
+        "final_action": "REQUEST_MISSING_DOCUMENT",
+        "reason": "Required documents(s) missing:INVOICE"
+    },
+    {
+        "case_id": "CASE-0040",
+        "transaction_id": "300039",
+        "fault_type": "missing_document",
+        "predicted_status": "MISSING_DOCUMENT",
+        "final_action": "REQUEST_MISSING_DOCUMENT",
+        "reason": "Required documents(s) missing:PAYMENT"
+    },
+    {
+        "case_id": "CASE-0041",
+        "transaction_id": "300040",
+        "fault_type": "wrong_customer",
+        "predicted_status": "CUSTOMER_MISMATCH",
+        "final_action": "ESCALATE",
+        "reason": "Customer IDs differ between relatedfinancial documents."
+    },
+    {
+        "case_id": "CASE-0042",
+        "transaction_id": "300041",
+        "fault_type": "broken_reference",
+        "predicted_status": "MISSING_DOCUMENT",
+        "final_action": "REQUEST_MISSING_DOCUMENT",
+        "reason": "Required documents(s) missing:INVOICE"
+    },
+    {
+        "case_id": "CASE-0047",
+        "transaction_id": "300046",
+        "fault_type": "missing_document",
+        "predicted_status": "MISSING_DOCUMENT",
+        "final_action": "REQUEST_MISSING_DOCUMENT",
+        "reason": "Required documents(s) missing:PAYMENT"
+    },
+    {
+        "case_id": "CASE-0048",
+        "transaction_id": "300047",
+        "fault_type": "wrong_customer",
+        "predicted_status": "CUSTOMER_MISMATCH",
+        "final_action": "ESCALATE",
+        "reason": "Customer IDs differ between relatedfinancial documents."
+    },
+    {
+        "case_id": "CASE-0049",
+        "transaction_id": "300048",
+        "fault_type": "broken_reference",
+        "predicted_status": "MISSING_DOCUMENT",
+        "final_action": "REQUEST_MISSING_DOCUMENT",
+        "reason": "Required documents(s) missing:INVOICE"
+    },
+    {
+        "case_id": "CASE-0054",
+        "transaction_id": "300053",
+        "fault_type": "missing_document",
+        "predicted_status": "MISSING_DOCUMENT",
+        "final_action": "REQUEST_MISSING_DOCUMENT",
+        "reason": "Required documents(s) missing:PAYMENT"
+    },
+    {
+        "case_id": "CASE-0055",
+        "transaction_id": "300054",
+        "fault_type": "wrong_customer",
+        "predicted_status": "CUSTOMER_MISMATCH",
+        "final_action": "ESCALATE",
+        "reason": "High risk anomaly detected: CUSTOMER_MISMATCH. Escalating."
+    },
+    {
+        "case_id": "CASE-0056",
+        "transaction_id": "300055",
+        "fault_type": "broken_reference",
+        "predicted_status": "MISSING_DOCUMENT",
+        "final_action": "REQUEST_MISSING_DOCUMENT",
+        "reason": "Required documents(s) missing:INVOICE"
+    },
+    {
+        "case_id": "CASE-0061",
+        "transaction_id": "300060",
+        "fault_type": "missing_document",
+        "predicted_status": "MISSING_DOCUMENT",
+        "final_action": "REQUEST_MISSING_DOCUMENT",
+        "reason": "Required documents(s) missing:PAYMENT"
+    },
+    {
+        "case_id": "CASE-0062",
+        "transaction_id": "300061",
+        "fault_type": "wrong_customer",
+        "predicted_status": "CUSTOMER_MISMATCH",
+        "final_action": "ESCALATE",
+        "reason": "Customer IDs differ between relatedfinancial documents."
+    },
+    {
+        "case_id": "CASE-0063",
+        "transaction_id": "300062",
+        "fault_type": "broken_reference",
+        "predicted_status": "MISSING_DOCUMENT",
+        "final_action": "REQUEST_MISSING_DOCUMENT",
+        "reason": "Required documents(s) missing:INVOICE"
+    },
+    {
+        "case_id": "CASE-0068",
+        "transaction_id": "300067",
+        "fault_type": "missing_document",
+        "predicted_status": "MISSING_DOCUMENT",
+        "final_action": "REQUEST_MISSING_DOCUMENT",
+        "reason": "Required documents(s) missing:PAYMENT"
+    },
+    {
+        "case_id": "CASE-0069",
+        "transaction_id": "300068",
+        "fault_type": "wrong_customer",
+        "predicted_status": "CUSTOMER_MISMATCH",
+        "final_action": "ESCALATE",
+        "reason": "Customer IDs differ between relatedfinancial documents."
+    },
+    {
+        "case_id": "CASE-0070",
+        "transaction_id": "300069",
+        "fault_type": "broken_reference",
+        "predicted_status": "MISSING_DOCUMENT",
+        "final_action": "REQUEST_MISSING_DOCUMENT",
+        "reason": "Required documents(s) missing:INVOICE"
+    }
+]
